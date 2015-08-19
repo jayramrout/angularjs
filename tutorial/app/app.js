@@ -1,6 +1,13 @@
-/**
- * Created by Jayram on 8/17/2015.
- */
-var person = "TonyApp";
-stevesApp.person = person;
-stevesApp.logPerson();
+var myApp = angular.module('myApp', ['ngMessages', 'ngResource']);
+/*
+
+myApp.controller('mainController', function($scope, $log, $filter, $resource) {
+    
+    $log.info($scope);
+    
+});
+
+*/
+myApp.controller('mainController', ['$scope','$log',function(a, b) {
+    b.info(a);
+}]);
