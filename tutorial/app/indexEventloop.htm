@@ -53,15 +53,15 @@
         <hr/>
         <h1>Twitter.com/{{lowercasehandle()}}</h1>
         <h3>Rules</h3>
-        <ul>
+        <ul ng-cloak>
             <li ng-repeat="rule in rules">
                 {{rule.rulename}}
             </li>
         </ul>
 
         <input type="button" value="ClickMe" ng-click="alertClick()"/>
-    </div>
 
+    </div>
 </div>
 
 </body>

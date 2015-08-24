@@ -8,6 +8,18 @@ myApp.controller('mainController', ['$scope','$log', '$timeout','$filter',functi
     };
     $scope.characters = 5;
 
+    var rulesRequest = new XMLHttpRequest();
+    rulesRequest.onreadystatechange = function(){
+        $scope.$apply(function(){
+            if(rulesRequest.readyState == 4 && rulesRequest.status == 200) {
+                //$scope.rules = rulesRequest.responseText;
+                //JSON.parse(rulesRequest.responseText);
+            }
+        });
+    }
+    rulesRequest.open("GET","http://localhost:8080/webapp/helloWorld",true);
+    rulesRequest.send();
+
     $scope.rules = [
         {rulename:"You there"},{rulename:"I am here"},{rulename:"I am AngularJS"}
     ];
